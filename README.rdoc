@@ -18,6 +18,10 @@ and
 	<dynamicField name="*_attachment" stored="true" type="text" multiValued="true" indexed="true"/>
 	<dynamicField name="ignored_*" type="ignored"/>
 
+== Note
+
+This version assumes the attachment attribute has method +.data+, that returns contents of the attachment.
+
 == Todo
 
 * Tests
