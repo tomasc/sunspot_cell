@@ -13,7 +13,7 @@ http://outoftime.lighthouseapp.com/projects/20339/tickets/98-solr-cell
 
 	<fieldType name="ignored" stored="false" indexed="false" multiValued="true" class="solr.StrField" />
 	
-	and
+and
 	
 	<dynamicField name="*_attachment" stored="true" type="text" multiValued="true" indexed="true"/>
 	<dynamicField name="ignored_*" type="ignored"/>
