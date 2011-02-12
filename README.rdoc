@@ -1,1 +1,31 @@
-WIP
+= Sunspot Cell
+
+This plugin adds Cell support (for indexing rich documents) to Sunspot (developed against Sunspot 1.2.1).
+
+The code is based on the patch included here:
+http://outoftime.lighthouseapp.com/projects/20339/tickets/98-solr-cell
+
+== Requirements
+
+* Solr Cell libraries (+dist/apache-solr-cell-1.4.X.jar+ and +contrib/extraction/*.jar+ from the standard Solr distribution) placed in the +/solr/lib+ directory as created by the Sunspot gem, in development environment. Your production setup might vary.
+
+* Adjustements to the Solr +schema.xml+:
+
+	<fieldType name="ignored" stored="false" indexed="false" multiValued="true" class="solr.StrField" />
+	
+	and
+	
+	<dynamicField name="*_attachment" stored="true" type="text" multiValued="true" indexed="true"/>
+	<dynamicField name="ignored_*" type="ignored"/>
+
+== Todo
+
+* Tests
+
+== Note on Patches/Pull Requests
+
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a future version unintentionally.
+* Commit, do not mess with rakefile, version, or history. (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
