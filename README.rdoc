@@ -9,7 +9,7 @@ http://outoftime.lighthouseapp.com/projects/20339/tickets/98-solr-cell
 
 * Solr Cell libraries (+dist/apache-solr-cell-1.4.X.jar+ and +contrib/extraction/*.jar+ from the standard Solr distribution) placed in the +/solr/lib+ directory as created by the Sunspot gem, in development environment. Your production setup might vary.
 
-* Adjustements to the Solr +schema.xml+:
+* Adjustments to the Solr +schema.xml+:
 
 	<fieldType name="ignored" stored="false" indexed="false" multiValued="true" class="solr.StrField" />
 	
