@@ -1,6 +1,6 @@
-module Sunspot
-  class Indexer
-    
+module SunspotCell
+  module Indexer
+
     def add_documents(documents)
       documents_arr = Util.Array(documents)
       docs_attach = []
@@ -20,15 +20,15 @@ module Sunspot
           document.add(@connection)
         end
       end
-    end    
-    
-    
-    def document_for(model)
+    end
+
+
+    def document_for_1(model)
       Sunspot::RichDocument.new(
         :id => Adapters::InstanceAdapter.adapt(model).index_id,
         :type => Util.superclasses_for(model.class).map { |clazz| clazz.name }
       )
     end
-    
+
   end
 end

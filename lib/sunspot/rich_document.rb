@@ -1,4 +1,5 @@
 module Sunspot
+
   class RichDocument < RSolr::Message::Document
     include Enumerable
 
@@ -10,8 +11,6 @@ module Sunspot
       end
       return false
     end
-
-
 
     def add(connection)
       params = {

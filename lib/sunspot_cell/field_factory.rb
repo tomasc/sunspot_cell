@@ -1,4 +1,4 @@
-module Sunspot
+module SunspotCell
   module FieldFactory
     
     class Attachment

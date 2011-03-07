@@ -1,6 +1,6 @@
-module Sunspot
-  class Setup
-    
+module SunspotCell
+  module Setup
+
     def initialize(clazz)
       @class_object_id = clazz.object_id
       @class_name = clazz.name
@@ -12,9 +12,7 @@ module Sunspot
       @dsl = DSL::Fields.new(self)
       add_field_factory(:class, Type::ClassType.instance)
     end
-    
-    
-    
+
     # Add field_factories for fulltext search on attachments
     #
     # ==== Parameters
@@ -28,11 +26,9 @@ module Sunspot
         @attachment_field_factories_cache[field_factory.name] << field_factory
       end
     end
-    
-    
-    
+
     def text_fields(field_name)
-      text_field = 
+      text_field =
         if field_factory = @text_field_factories_cache[field_name.to_sym]
           field_factory.build
         else
@@ -47,15 +43,11 @@ module Sunspot
         end
       [text_field]
     end
-    
-    
-    
+
     def all_attachment_fields
       attachment_field_factories.map { |field_factory| field_factory.build }
     end
-    
-    
-    
+
     # Get the text field_factories associated with this setup as well as all inherited
     # attachment field_factories
     #
@@ -66,13 +58,12 @@ module Sunspot
     def attachment_field_factories
       collection_from_inheritable_hash(:attachment_field_factories)
     end
-    
-    
+
     def all_field_factories
       all_field_factories = []
       all_field_factories.concat(field_factories).concat(text_field_factories).concat(dynamic_field_factories).concat(attachment_field_factories)
       all_field_factories
     end
-    
+      
   end
 end
