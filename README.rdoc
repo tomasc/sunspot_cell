@@ -26,16 +26,16 @@ This version assumes the attachment attribute has method +.data+, that returns c
 
 In your searchable block within your model add the document content attribute as an "attachment" type:
 
-searchable do
-  attachment :document_attachment
-  ...
-end
+  searchable do
+    attachment :document_attachment
+    ...
+  end
 
 The plugin will expect a method to be defined that matches the name of the attachment attribute in our example it would be "document_attachment", e.g.
 
-def document_attachment
-  File.read(fname) # Reading contents from a file, you can also supply the contents direct from a DB field
-end
+  def document_attachment
+    File.read(fname) # Reading contents from a file, you can also supply the contents direct from a DB field
+  end
 
 == Todo
 
