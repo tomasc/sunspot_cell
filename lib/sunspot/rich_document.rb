@@ -21,7 +21,7 @@ module Sunspot
 
       @fields.each do |f|
         if f.name.to_s.include?("_attachment") and f.value.present?
-          data = f.value.data
+          data = f.value #.data
           params['fmap.content'] = f.name
         else
           param_name = "literal.#{f.name.to_s}"
