@@ -3,9 +3,9 @@ module SunspotCell
 
 
     def self.included(base)
-       base.class_eval do
-         attr_reader :default_boost
-       end
+      base.class_eval do
+        attr_reader :default_boost
+      end
     end
 
   end

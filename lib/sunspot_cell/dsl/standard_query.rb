@@ -3,9 +3,9 @@ module SunspotCell
     module StandardQuery
 
       def self.included(base)
-         base.class_eval do
+        base.class_eval do
           include InstanceMethods
-         end
+        end
       end
 
       module InstanceMethods

@@ -19,7 +19,7 @@ module SunspotCell
       #
       def add_attachment_field_factory(name, options = {}, &block)
         stored = options[:stored]
-        field_factory = Sunspot::FieldFactory::Static.new(name, Type::AttachmentType.instance, options, &block)
+        field_factory = Sunspot::FieldFactory::Static.new(name, Sunspot::Type::AttachmentType.instance, options, &block)
         @attachment_field_factories[name] = field_factory
         @attachment_field_factories_cache[field_factory.name] = field_factory
         if stored
