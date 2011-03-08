@@ -1,6 +1,6 @@
 module SunspotCell
   module FieldFactory
-    
+
     class Attachment
       def initialize(name = nil, &block)
         if block

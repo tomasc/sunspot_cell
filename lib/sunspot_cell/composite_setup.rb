@@ -1,7 +1,11 @@
 module SunspotCell
     module CompositeSetup
 
-      extend ActiveSupport::Concern
+      def self.included(base)
+         base.class_eval do
+          include InstanceMethods
+         end
+      end
 
       module InstanceMethods
 
