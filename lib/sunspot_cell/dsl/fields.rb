@@ -14,8 +14,9 @@ module SunspotCell
         # indexing by tiqa
 
         def attachment(*names)
+          options = names.pop if names.last.is_a?(Hash)
           names.each do |name|
-            @setup.add_attachment_field_factory(name)
+            @setup.add_attachment_field_factory(name, options || {})
           end
         end
 

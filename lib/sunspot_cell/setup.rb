@@ -9,11 +9,13 @@ module SunspotCell
           sunspot_initialize(clazz)
         end
 
+        alias :sunspot_all_field_factories :all_field_factories unless method_defined?(:sunspot_all_field_factories)
         def all_field_factories
-          all_field_factories = []
-          all_field_factories.concat(field_factories).concat(text_field_factories).concat(dynamic_field_factories).concat(attachment_field_factories)
+          all_field_factories = sunspot_all_field_factories
+          all_field_factories.concat(attachment_field_factories)
           all_field_factories
         end
+        
         # Add field_factories for fulltext search on attachments
         #
         # ==== Parameters
