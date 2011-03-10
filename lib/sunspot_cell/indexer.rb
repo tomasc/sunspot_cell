@@ -19,8 +19,13 @@ module SunspotCell
           unless docs_no_attach.empty?
             @connection.add(docs_no_attach)
           else
-            Sunspot::Util.Array(docs_attach).each do |document|
-              document.add(@connection)
+            begin
+              Sunspot::Util.Array(docs_attach).each do |document|
+                document.add(@connection)
+              end
+            rescue Exception => e
+              @batch = nil
+              raise
             end
           end
         end
