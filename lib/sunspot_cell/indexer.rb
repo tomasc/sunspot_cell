@@ -25,7 +25,7 @@ module SunspotCell
               end
             rescue Exception => e
               @batch = nil
-              raise
+              raise e
             end
           end
         end
