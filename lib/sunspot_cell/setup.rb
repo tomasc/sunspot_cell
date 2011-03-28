@@ -47,6 +47,14 @@ module SunspotCell
           [text_field]
         end
 
+        #
+        # Return all text fields
+        #
+        def all_text_fields
+          text_fields = text_field_factories.map { |text_field_factory| text_field_factory.build }
+          text_fields.concat(all_attachment_fields)
+        end
+
         def all_attachment_fields
           attachment_field_factories.map { |field_factory| field_factory.build }
         end
