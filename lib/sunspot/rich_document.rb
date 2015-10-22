@@ -42,6 +42,7 @@ module Sunspot
           :data => data,
           :headers => {"Content-Type" => ""}
         })
+      
     end
   end
 end
